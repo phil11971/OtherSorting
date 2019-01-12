@@ -15,7 +15,7 @@ namespace CycleSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = CycleSort(mas);
+            CycleSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -23,7 +23,7 @@ namespace CycleSort
             Console.ReadKey();
         }
 
-        static int[] CycleSort(int[] a)
+        public static void CycleSort(int[] a)
         {
             for (int cycleStart = 0; cycleStart < a.Length - 1; cycleStart++)
             {
@@ -66,7 +66,6 @@ namespace CycleSort
                     val = tmp;
                 }
             }
-            return a;
         }
 
         static void PrintMas(int[] arr)

@@ -15,7 +15,7 @@ namespace CircleSorting
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = CircleSort(mas);
+            CircleSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -23,13 +23,10 @@ namespace CircleSorting
             Console.ReadKey();
         }
 
-        static int[] CircleSort(int[] arr)
+        public static void CircleSort(int[] arr)
         {
-            if (arr.Length > 0) {
+            if (arr.Length > 0) 
                 while (CircleSortR(arr, 0, arr.Length - 1, 0) != 0);
-                return arr;
-            }
-            return null;
         }
 
         private static int CircleSortR(int[] arr, int lo, int hi, int numSwaps)

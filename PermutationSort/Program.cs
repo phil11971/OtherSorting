@@ -23,7 +23,7 @@ namespace PermutationSort
             Console.ReadKey();
         }
 
-        static int[] PermutationSort(int[] a)
+        public static int[] PermutationSort(int[] a)
         {
             List<int[]> list = new List<int[]>();
             Permute(a, a.Length, list);

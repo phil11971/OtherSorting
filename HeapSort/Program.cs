@@ -15,7 +15,7 @@ namespace HeapSort
             Console.WriteLine("Src mas");
             PrintMas(mas);
 
-            mas = HeapSort(mas);
+            HeapSort(mas);
 
             Console.WriteLine("Res mas");
             PrintMas(mas);
@@ -37,10 +37,9 @@ namespace HeapSort
             Console.ReadKey();
         }
 
-        public static T[] HeapSort<T>(T[] array)
+        public static void HeapSort<T>(T[] array)
         {
             HeapSort<T>(array, 0, array.Length, Comparer<T>.Default);
-            return array;
         }
 
         public static void HeapSort<T>(T[] array, int offset, int length, IComparer<T> comparer)
@@ -48,7 +47,7 @@ namespace HeapSort
             HeapSort<T>(array, offset, length, comparer.Compare);
         }
 
-        public static void HeapSort<T>(T[] array, int offset, int length, Comparison<T> comparison)
+        private static void HeapSort<T>(T[] array, int offset, int length, Comparison<T> comparison)
         {
             // build binary heap from all items
             for (int i = 0; i < length; i++)
